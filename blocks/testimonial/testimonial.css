@@ -1,0 +1,28 @@
+main .testimonial {
+  display: grid;
+  gap: 1.5rem;
+}
+
+main .testimonial .testimonial-item {
+  margin: 0;
+  border-inline-start: 0.25rem solid var(--link-color);
+  padding: 1.5rem;
+  background-color: var(--light-color);
+}
+
+main .testimonial .testimonial-quote {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+  line-height: 1.4;
+}
+
+main .testimonial .testimonial-attribution {
+  margin-block-start: 1rem;
+  font-size: var(--body-font-size-s);
+}
+
+main .testimonial.dark .testimonial-item {
+  background-color: var(--dark-color);
+  color: var(--background-color);
+}
