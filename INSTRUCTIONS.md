@@ -1,4 +1,4 @@
-# EDS Skills Test
+git commit --allow-empty -m "trigger sync"# EDS Skills Test
 
 - **Project:** `eds-skills-test`
 - **Authoring model:** DA-Based (DA.live)
