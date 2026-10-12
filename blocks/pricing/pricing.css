@@ -1,0 +1,182 @@
+main .pricing {
+  --pricing-background: var(--background-color);
+  --pricing-text: var(--text-color);
+  --pricing-muted: rgb(117 117 117);
+  --pricing-border: rgb(220 220 220);
+  --pricing-selected-background: rgb(245 245 245);
+  --pricing-featured-background: rgb(45 45 45);
+  --pricing-featured-text: var(--background-color);
+  --pricing-featured-button: rgb(232 232 232);
+  --pricing-content-width: 56rem;
+  --pricing-section-space: clamp(3.25rem, 9vh, 5.5rem);
+  --pricing-plan-gap: clamp(1rem, 5.2vw, 3.25rem);
+  --pricing-card-padding: 1.5rem 1.625rem;
+  --pricing-card-min-height: 20.625rem;
+  --pricing-block-gap: 2.5rem;
+  --pricing-toggle-gap: 0.25rem;
+  --pricing-price-spacing: 0.5rem;
+  --pricing-currency-size: 1.25rem;
+  --pricing-feature-spacing: 0.75rem;
+  --pricing-list-indent: 1.25rem;
+  --pricing-list-row-spacing: 0.25rem;
+  --pricing-action-spacing: 0.75rem;
+  --pricing-button-min-height: 2.125rem;
+  --pricing-button-padding: 0.375rem 0.75rem;
+  --pricing-border-width: 0.0625rem;
+  --pricing-card-radius: 0.5rem;
+  --pricing-button-radius: 0.375rem;
+  --pricing-body-size: 0.875rem;
+  --pricing-title-size: 1.25rem;
+  --pricing-price-size: 2.5rem;
+  --pricing-period-size: 0.75rem;
+  --pricing-title-weight: 600;
+  --pricing-currency-weight: 600;
+  --pricing-amount-weight: 700;
+  --pricing-toggle-padding: 0.375rem 0.5rem;
+  --pricing-toggle-radius: 0.375rem;
+
+  display: grid;
+  gap: var(--pricing-block-gap);
+  max-width: var(--pricing-content-width);
+  margin-inline: auto;
+  padding-block: var(--pricing-section-space);
+  color: var(--pricing-text);
+  font-family: var(--body-font-family);
+}
+
+main .pricing .pricing-toggle {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  gap: var(--pricing-toggle-gap);
+  font-size: var(--pricing-body-size);
+}
+
+main .pricing .pricing-toggle-option {
+  border-radius: var(--pricing-toggle-radius);
+  padding: var(--pricing-toggle-padding);
+}
+
+main .pricing .pricing-toggle-option[aria-current='true'] {
+  background-color: var(--pricing-selected-background);
+}
+
+main .pricing .pricing-plans {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--pricing-plan-gap);
+}
+
+main .pricing .pricing-plan {
+  box-sizing: border-box;
+  display: flex;
+  min-height: var(--pricing-card-min-height);
+  flex-direction: column;
+  border: var(--pricing-border-width) solid var(--pricing-border);
+  border-radius: var(--pricing-card-radius);
+  padding: var(--pricing-card-padding);
+  background-color: var(--pricing-background);
+}
+
+main .pricing .pricing-plan.is-featured {
+  border-color: var(--pricing-featured-background);
+  background-color: var(--pricing-featured-background);
+  color: var(--pricing-featured-text);
+}
+
+main .pricing .pricing-plan-title {
+  text-align: center;
+}
+
+main .pricing .pricing-plan-title h2,
+main .pricing .pricing-plan-title h3,
+main .pricing .pricing-plan-title h4 {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: var(--pricing-title-size);
+  font-weight: var(--pricing-title-weight);
+}
+
+main .pricing .pricing-plan-price {
+  margin-block-start: var(--pricing-price-spacing);
+  text-align: center;
+  line-height: 1;
+}
+
+main .pricing .pricing-plan-price p {
+  margin: 0;
+}
+
+main .pricing .pricing-plan-price small {
+  font-size: var(--pricing-currency-size);
+  font-weight: var(--pricing-currency-weight);
+}
+
+main .pricing .pricing-plan-price strong {
+  font-size: var(--pricing-price-size);
+  font-weight: var(--pricing-amount-weight);
+}
+
+main .pricing .pricing-plan-price span {
+  font-size: var(--pricing-period-size);
+}
+
+main .pricing .pricing-plan-features {
+  margin-block: var(--pricing-feature-spacing);
+  font-size: var(--pricing-body-size);
+}
+
+main .pricing .pricing-plan:not(.is-featured) .pricing-plan-features {
+  color: var(--pricing-muted);
+}
+
+main .pricing .pricing-plan-features ul {
+  margin: 0;
+  padding-inline-start: var(--pricing-list-indent);
+}
+
+main .pricing .pricing-plan-features li {
+  margin-block: var(--pricing-list-row-spacing);
+}
+
+main .pricing .pricing-plan-action {
+  margin-block-start: auto;
+  padding-block-start: var(--pricing-action-spacing);
+  font-size: var(--pricing-body-size);
+  text-align: center;
+}
+
+main .pricing .pricing-plan-action p {
+  margin: 0;
+}
+
+main .pricing .pricing-action-link:any-link,
+main .pricing .pricing-action-label {
+  box-sizing: border-box;
+  display: flex;
+  min-height: var(--pricing-button-min-height);
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--pricing-button-radius);
+  padding: var(--pricing-button-padding);
+  background-color: var(--pricing-featured-background);
+  color: var(--pricing-featured-text);
+  text-decoration: none;
+}
+
+main .pricing .pricing-action-link:hover,
+main .pricing .pricing-action-link:focus-visible {
+  text-decoration: underline;
+}
+
+main .pricing .pricing-plan.is-featured .pricing-action-link:any-link,
+main .pricing .pricing-plan.is-featured .pricing-action-label {
+  background-color: var(--pricing-featured-button);
+  color: var(--pricing-text);
+}
+
+@media (width >= 56.25rem) {
+  main .pricing .pricing-plans {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
