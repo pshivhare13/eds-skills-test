@@ -8,6 +8,7 @@
 }
 
 .columns > div > div {
+  min-width: 0;
   order: 1;
 }
 
